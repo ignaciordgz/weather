@@ -1,7 +1,12 @@
 "use client"
-import Image from "next/image"
-import sunny from "../../public/weather-icons/sun_869869.png"
 import { useState } from "react"
+import Image from "next/image"
+import sunny from "../../public/weather-icons/sun.png"
+import cloudy from "../../public/weather-icons/cloudy.png"
+import snow from "../../public/weather-icons/snow.png"
+import storm from "../../public/weather-icons/storm.png"
+import windy from "../../public/weather-icons/windy.png"
+import thunderstorm from "../../public/weather-icons/thunderstorm.png"
 
 export default function WeatherLogo()
 {
