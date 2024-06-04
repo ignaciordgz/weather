@@ -1,12 +1,7 @@
-import FavCity from "@/components/favcity";
-import SearchBar from "@/components/searchbar";
-import WeatherLogo from "@/components/weatherlogo";
-import Image from "next/image";
+import MainScreen from "@/pages/screen";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-start justify-between p-24">
-        <FavCity></FavCity>
-    </main>
+      <MainScreen/>
   );
 }
