@@ -1,0 +1,1 @@
+export { default as Humidity} from '../../../public/weather-icons/humidity.svg'

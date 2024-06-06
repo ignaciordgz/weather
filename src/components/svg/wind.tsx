@@ -1,0 +1,1 @@
+export { default as Wind} from '../../../public/weather-icons/wind.svg'

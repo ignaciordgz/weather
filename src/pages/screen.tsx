@@ -3,7 +3,6 @@ import FavCity from "@/components/favcity"
 import SearchBar from "@/components/searchbar"
 import WeatherLogo from "@/components/weatherlogo"
 import { axiosGetCityInfo } from "@/service/calls"
-import { ExecException } from "child_process"
 import { useRef, useState } from "react"
 
 export default function MainScreen()
