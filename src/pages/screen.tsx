@@ -6,6 +6,14 @@ import WeatherLogo from "@/components/weatherlogo"
 import { axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
 import { useRef, useState } from "react"
 
+interface weatherDay
+{
+    temp: string,
+    humidity:string,
+    wind:string,
+    main:string
+}
+
 export default function MainScreen()
 {
     const searchRef = useRef<HTMLInputElement>(null)
@@ -15,6 +23,12 @@ export default function MainScreen()
     const [ humidity, setHumidity ] = useState<string | undefined>()
     const [ wind, setWind ] = useState<string | undefined>()
     const [ mainCity, setCity ] = useState<string | undefined>()
+
+    const [ day1, setDay1 ] = useState<weatherDay | undefined>()
+    const [ day2, setDay2 ] = useState<weatherDay | undefined>()
+    const [ day3, setDay3 ] = useState<weatherDay | undefined>()
+    const [ day4, setDay4 ] = useState<weatherDay | undefined>()
+    const [ day5, setDay5 ] = useState<weatherDay | undefined>()
 
     const submitHandler = async(e:React.FormEvent<HTMLFormElement>) => 
     {
@@ -38,7 +52,17 @@ export default function MainScreen()
         try
         {
             let response = await axiosGetForecast(city)
+            let day1 = { temp : response.data.list.at(0).main.temp, humidity:response.data.list.at(0).main.humidity, wind: response.data.list.at(0).wind.speed, main:response.data.list.at(0).weather.at(0).main} 
+            let day2 = { temp : response.data.list.at(8).main.temp, humidity:response.data.list.at(8).main.humidity, wind: response.data.list.at(8).wind.speed, main:response.data.list.at(8).weather.at(0).main} 
+            let day3 = { temp : response.data.list.at(16).main.temp, humidity:response.data.list.at(16).main.humidity, wind: response.data.list.at(16).wind.speed, main:response.data.list.at(16).weather.at(0).main}
+            let day4 = { temp : response.data.list.at(24).main.temp, humidity:response.data.list.at(24).main.humidity, wind: response.data.list.at(24).wind.speed, main:response.data.list.at(24).weather.at(0).main}
+            let day5 = { temp : response.data.list.at(32).main.temp, humidity:response.data.list.at(32).main.humidity, wind: response.data.list.at(32).wind.speed, main:response.data.list.at(32).weather.at(0).main}
             setCity(response.data.city.name)
+            setDay1(day1)
+            setDay2(day2)
+            setDay3(day3)
+            setDay4(day4)
+            setDay5(day5)
         }
         catch(e)
         {
@@ -55,8 +79,12 @@ export default function MainScreen()
                 <FavCity/>
                 <FavCity/>
             </div>
-            <div className="absolute w-3/5 left-96 top-1/4">
-                <Forecast city={mainCity}></Forecast>
+            <div className="absolute w-3/5 left-96 grid space-y-12 top-1/4">
+                <Forecast city={mainCity} day={day1}></Forecast>
+                <Forecast city={mainCity} day={day2}></Forecast>
+                <Forecast city={mainCity} day={day3}></Forecast>
+                <Forecast city={mainCity} day={day4}></Forecast>
+                <Forecast city={mainCity} day={day5}></Forecast>
             </div>
         </main>
 

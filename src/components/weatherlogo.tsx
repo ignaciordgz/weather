@@ -9,7 +9,7 @@ import { Humidity } from "./svg/humidity"
 import { Wind } from "./svg/wind"
 
 
-const setIcon = ( desc:string ) => 
+export const setIcon = ( desc:string ) => 
 {
     switch(desc)
     {
