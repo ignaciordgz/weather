@@ -2,7 +2,7 @@
 import FavCity from "@/components/favcity"
 import SearchBar from "@/components/searchbar"
 import WeatherLogo from "@/components/weatherlogo"
-import { axiosGetCityInfo } from "@/service/calls"
+import { axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
 import { useRef, useState } from "react"
 
 export default function MainScreen()
@@ -20,9 +20,13 @@ export default function MainScreen()
 
         e.preventDefault()
 
+        
+        var response = await axiosGetForecast(city)
+        console.log(response.data)
+
         try
         {
-            var response = await axiosGetCityInfo(city)
+            let response = await axiosGetCityInfo(city)
             console.log(response.data)
             setMainWeather(response.data.weather.at(0).main)
             setTemp(response.data.main.temp + "°C")
