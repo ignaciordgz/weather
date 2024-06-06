@@ -1,5 +1,6 @@
 "use client"
 import FavCity from "@/components/favcity"
+import Forecast from "@/components/forecast"
 import SearchBar from "@/components/searchbar"
 import WeatherLogo from "@/components/weatherlogo"
 import { axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
@@ -13,6 +14,7 @@ export default function MainScreen()
     const [ temp, setTemp ] = useState<string | undefined>()
     const [ humidity, setHumidity ] = useState<string | undefined>()
     const [ wind, setWind ] = useState<string | undefined>()
+    const [ mainCity, setCity ] = useState<string | undefined>()
 
     const submitHandler = async(e:React.FormEvent<HTMLFormElement>) => 
     {
@@ -20,18 +22,23 @@ export default function MainScreen()
 
         e.preventDefault()
 
-        
-        var response = await axiosGetForecast(city)
-        console.log(response.data)
-
         try
         {
             let response = await axiosGetCityInfo(city)
-            console.log(response.data)
             setMainWeather(response.data.weather.at(0).main)
             setTemp(response.data.main.temp + "°C")
             setHumidity(response.data.main.humidity + "%")
             setWind(response.data.wind.speed + "m/s")
+        }
+        catch(e)
+        {
+            console.error("INGRESA UNA CIUDAD VALIDA")
+        }
+
+        try
+        {
+            let response = await axiosGetForecast(city)
+            setCity(response.data.city.name)
         }
         catch(e)
         {
@@ -48,6 +55,10 @@ export default function MainScreen()
                 <FavCity/>
                 <FavCity/>
             </div>
+            <div className="absolute w-3/5 left-96 top-1/4">
+                <Forecast city={mainCity}></Forecast>
+            </div>
         </main>
+
     )
 }
