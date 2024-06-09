@@ -21,6 +21,10 @@ export default function Forecast({city, day}:any)
             <p className="pl-3">{city}</p>
             <div className="flex justify-between w-52 items-center">
                 <div>
+                    <Wind className="opacity-45 group-hover:opacity-95 transition-all"/>
+                    <p className="group-hover:opacity-95 transition opacity-45 font-light text-sm">{day.wind + "m/s"}</p>
+                </div>
+                <div>
                     <Humidity className="opacity-45 group-hover:opacity-95 transition-all"/>
                     <p className="group-hover:opacity-95 transition opacity-45 font-light text-sm">{day.humidity + "%"}</p>
                 </div>
