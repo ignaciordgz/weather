@@ -9,16 +9,18 @@ export default function Forecast({city, day}:any)
 
     if (day == undefined)
     {
-        day = { temp : 0, humidity: 0, wind: 0, main: "Clear"}
+        day = { temp : 0, humidity: 0, wind: 0, main: "Clear", time:""}
     }
     else
     {
         icon = setIcon(day.main)
     }
 
+    var daytime = day.time.substring(5,7) + "/" + day.time.substring(8,10)
+
     return(      
         <div className="w-full h-12 group flex transition-colors items-center justify-between rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-            <p className="pl-3">{city}</p>
+            <p className="pl-3">{city + `, ${daytime}`}</p>
             <div className="flex justify-between w-80 items-center">
                 <div className="flex items-center justify-between w-36">
                     <div className="flex space-x-2 items-center">
