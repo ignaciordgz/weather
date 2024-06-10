@@ -34,6 +34,9 @@ export default function WeatherLogo({humidity, wind, description, temp}:any)
 
     return(
         <div className="grid transition-colors justify-center group rounded-lg border border-transparent px-5 py-6 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+            <div className="flex justify-center pb-5">
+                <p className="font-light group-hover:opacity-100 opacity-80 transition">Today</p>
+            </div>
             {icon && (   
                 <Image
                 src={icon}
