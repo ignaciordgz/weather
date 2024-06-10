@@ -11,7 +11,8 @@ interface weatherDay
     temp: string,
     humidity:string,
     wind:string,
-    main:string
+    main:string,
+    time:string
 }
 
 export default function MainScreen()
@@ -39,6 +40,7 @@ export default function MainScreen()
         try
         {
             let response = await axiosGetCityInfo(city)
+            console.log(response)
             setMainWeather(response.data.weather.at(0).main)
             setTemp(response.data.main.temp + "°C")
             setHumidity(response.data.main.humidity + "%")
@@ -52,11 +54,11 @@ export default function MainScreen()
         try
         {
             let response = await axiosGetForecast(city)
-            let day1 = { temp : response.data.list.at(0).main.temp, humidity:response.data.list.at(0).main.humidity, wind: response.data.list.at(0).wind.speed, main:response.data.list.at(0).weather.at(0).main} 
-            let day2 = { temp : response.data.list.at(8).main.temp, humidity:response.data.list.at(8).main.humidity, wind: response.data.list.at(8).wind.speed, main:response.data.list.at(8).weather.at(0).main} 
-            let day3 = { temp : response.data.list.at(16).main.temp, humidity:response.data.list.at(16).main.humidity, wind: response.data.list.at(16).wind.speed, main:response.data.list.at(16).weather.at(0).main}
-            let day4 = { temp : response.data.list.at(24).main.temp, humidity:response.data.list.at(24).main.humidity, wind: response.data.list.at(24).wind.speed, main:response.data.list.at(24).weather.at(0).main}
-            let day5 = { temp : response.data.list.at(32).main.temp, humidity:response.data.list.at(32).main.humidity, wind: response.data.list.at(32).wind.speed, main:response.data.list.at(32).weather.at(0).main}
+            let day1 = { temp : response.data.list.at(0).main.temp, humidity:response.data.list.at(0).main.humidity, wind: response.data.list.at(0).wind.speed, main:response.data.list.at(0).weather.at(0).main, time: response.data.list.at(0).dt_txt} 
+            let day2 = { temp : response.data.list.at(8).main.temp, humidity:response.data.list.at(8).main.humidity, wind: response.data.list.at(8).wind.speed, main:response.data.list.at(8).weather.at(0).main, time: response.data.list.at(8).dt_txt} 
+            let day3 = { temp : response.data.list.at(16).main.temp, humidity:response.data.list.at(16).main.humidity, wind: response.data.list.at(16).wind.speed, main:response.data.list.at(16).weather.at(0).main, time: response.data.list.at(16).dt_txt}
+            let day4 = { temp : response.data.list.at(24).main.temp, humidity:response.data.list.at(24).main.humidity, wind: response.data.list.at(24).wind.speed, main:response.data.list.at(24).weather.at(0).main, time: response.data.list.at(24).dt_txt}
+            let day5 = { temp : response.data.list.at(32).main.temp, humidity:response.data.list.at(32).main.humidity, wind: response.data.list.at(32).wind.speed, main:response.data.list.at(32).weather.at(0).main, time: response.data.list.at(32).dt_txt}
             setCity(response.data.city.name)
             setDay1(day1)
             setDay2(day2)
