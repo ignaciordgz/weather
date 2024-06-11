@@ -7,14 +7,7 @@ export default function Forecast({city, day}:any)
 {
     var icon;
 
-    if (day == undefined)
-    {
-        day = { temp : 0, humidity: 0, wind: 0, main: "Clear", time:""}
-    }
-    else
-    {
-        icon = setIcon(day.main)
-    }
+    icon = setIcon(day.main)
 
     var daytime = day.time.substring(5,7) + "/" + day.time.substring(8,10)
 

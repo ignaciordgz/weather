@@ -25,11 +25,11 @@ export default function MainScreen()
     const [ wind, setWind ] = useState<string | undefined>()
     const [ mainCity, setCity ] = useState<string | undefined>()
 
-    const [ day1, setDay1 ] = useState<weatherDay | undefined>()
-    const [ day2, setDay2 ] = useState<weatherDay | undefined>()
-    const [ day3, setDay3 ] = useState<weatherDay | undefined>()
-    const [ day4, setDay4 ] = useState<weatherDay | undefined>()
-    const [ day5, setDay5 ] = useState<weatherDay | undefined>()
+    const [ day1, setDay1 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
+    const [ day2, setDay2 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
+    const [ day3, setDay3 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
+    const [ day4, setDay4 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
+    const [ day5, setDay5 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
 
     const submitHandler = async(e:React.FormEvent<HTMLFormElement>) => 
     {
