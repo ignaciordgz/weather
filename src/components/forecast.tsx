@@ -18,9 +18,18 @@ export default function Forecast({city, day}:any)
 
     var daytime = day.time.substring(5,7) + "/" + day.time.substring(8,10)
 
+    if (city == undefined)
+    {
+        var forecastDay = ""
+    }
+    else
+    {
+        var forecastDay = city + ", " + daytime
+    }
+
     return(      
         <div className="w-full h-12 group flex transition-colors items-center justify-between rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-            <p className="pl-3">{city + `, ${daytime}`}</p>
+            <p className="pl-3">{forecastDay}</p>
             <div className="flex justify-between w-80 items-center">
                 <div className="flex items-center justify-between w-36">
                     <div className="flex space-x-2 items-center">
