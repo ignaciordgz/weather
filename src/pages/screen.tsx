@@ -1,6 +1,7 @@
 "use client"
 import FavCity from "@/components/favcity"
 import Forecast from "@/components/forecast"
+import LocationButton from "@/components/location"
 import SearchBar from "@/components/searchbar"
 import WeatherLogo from "@/components/weatherlogo"
 import { axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
@@ -73,7 +74,10 @@ export default function MainScreen()
 
     return(
         <main className="flex min-h-screen flex-col items-start justify-normal p-24">
-            <SearchBar submit={submitHandler} ref={searchRef}/>
+            <div className="flex items-center space-x-2 justify-center w-full">
+                <SearchBar submit={submitHandler} ref={searchRef}/>
+                <LocationButton></LocationButton>
+            </div>
             <div className="grid space-y-4">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
                 <FavCity/>
