@@ -40,7 +40,6 @@ export default function MainScreen()
         try
         {
             let response = await axiosGetCityInfo(city)
-            console.log(response)
             setMainWeather(response.data.weather.at(0).main)
             setTemp(response.data.main.temp + "°C")
             setHumidity(response.data.main.humidity + "%")

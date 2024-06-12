@@ -29,7 +29,7 @@ export default function Forecast({city, day}:any)
                         <Wind className="opacity-45 group-hover:opacity-95 transition-all"/>
                         <p className="group-hover:opacity-95 transition opacity-45 font-light text-sm">{day.wind + "m/s"}</p>
                     </div>
-                    <div className="items-center">
+                    <div className="w-7 items-center">
                         <Humidity className="opacity-45 group-hover:opacity-95 transition-all"/>
                         <p className="group-hover:opacity-95 transition opacity-45 font-light text-sm">{day.humidity + "%"}</p>
                     </div>
