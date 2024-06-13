@@ -25,3 +25,15 @@ export const axiosGetForecast = async ( city:string) =>
         throw new Error("City Info Invalid")
     }
 }
+
+export const axiosGetCityFromUbi = async ( lat:string, long:string) => 
+{
+    try
+    {
+        return await axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+    }
+    catch(error)
+    {
+        throw new Error("Latitude and longitud invalid")
+    }
+}
