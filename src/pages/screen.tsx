@@ -4,8 +4,29 @@ import Forecast from "@/components/forecast"
 import LocationButton from "@/components/location"
 import SearchBar from "@/components/searchbar"
 import WeatherLogo from "@/components/weatherlogo"
-import { axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
+import { axiosGetCityFromUbi, axiosGetCityInfo, axiosGetForecast } from "@/service/calls"
 import { useRef, useState } from "react"
+
+const AskUbication = () =>
+{
+    if (navigator.geolocation) 
+    {
+        navigator.geolocation.getCurrentPosition(Position);
+    } 
+    else
+    {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+const Position = async(pos:any) => 
+{
+    var lat = pos.coords.latitude
+    var long = pos.coords.longitude
+
+    let response = await axiosGetCityFromUbi(lat,long)
+    var cityByUbi = response.data.at(0).name
+}
 
 interface weatherDay
 {
@@ -35,7 +56,7 @@ export default function MainScreen()
     const submitHandler = async(e:React.FormEvent<HTMLFormElement>) => 
     {
         var city = searchRef.current?.value ?? ""
-
+        
         e.preventDefault()
 
         try
@@ -76,7 +97,7 @@ export default function MainScreen()
         <main className="flex min-h-screen flex-col items-start justify-normal p-24">
             <div className="flex items-center space-x-2 justify-center w-full">
                 <SearchBar submit={submitHandler} ref={searchRef}/>
-                <LocationButton></LocationButton>
+                <LocationButton ubi={AskUbication}></LocationButton>
             </div>
             <div className="grid space-y-4">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
