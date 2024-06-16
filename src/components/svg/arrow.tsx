@@ -1,0 +1,1 @@
+export { default as Arrow} from '../../../public/weather-icons/arrow.svg'
