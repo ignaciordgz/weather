@@ -1,10 +1,11 @@
+import Footer from "@/components/footer";
 import MainScreen from "@/pages/screen";
 
 export default function Home() {
   return (
     <div>
       <MainScreen/>
-      <footer>Made with Next.js</footer>
+      <Footer></Footer>
     </div>
   );
 }
