@@ -1,5 +1,4 @@
 "use client"
-import FavCity from "@/components/favcity"
 import Forecast from "@/components/forecast"
 import LocationButton from "@/components/location"
 import SearchBar from "@/components/searchbar"
@@ -114,9 +113,6 @@ export default function MainScreen()
             </div>
             <div className="grid space-y-4">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
-                <FavCity/>
-                <FavCity/>
-                <FavCity/>
             </div>
             <div className="absolute w-3/5 left-96 grid space-y-12 top-1/4">
                 <Forecast city={mainCity} day={day1}></Forecast>
