@@ -46,3 +46,11 @@ body {
     width: auto;
   }
 }
+
+@media screen and (max-width: 825px) {
+  #footerdiv
+  {
+    position: absolute;
+    top: 100%;
+  }
+}
