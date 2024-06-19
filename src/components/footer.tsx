@@ -3,7 +3,7 @@ import { Arrow } from "./svg/arrow"
 export default function Footer()
 {
     return(
-        <div>
+        <div className="absolute top-full">
             <footer className="py-4 w-full">
                 <div className="flex items-center">
                     <div className="group">

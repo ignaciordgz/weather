@@ -112,9 +112,9 @@ export default function MainScreen()
                 <SearchBar submit={submitHandler} ref={searchRef}/>
                 <LocationButton ubi={() => AskUbication(updateWeather)}></LocationButton>
             </div>
-            <div className="md:space-y-4 flex justify-between w-full">
+            <div id="forecastdiv" className="sm:space-y-4 flex justify-between w-full">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
-                <section className="md:w-5/6 grid space-y-12">
+                <section id="section" className="md:w-5/6 grid space-y-12">
                     <Forecast city={mainCity} day={day1}></Forecast>
                     <Forecast city={mainCity} day={day2}></Forecast>
                     <Forecast city={mainCity} day={day3}></Forecast>
