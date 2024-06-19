@@ -1,4 +1,5 @@
 "use client"
+import Footer from "@/components/footer"
 import Forecast from "@/components/forecast"
 import LocationButton from "@/components/location"
 import SearchBar from "@/components/searchbar"
@@ -106,20 +107,20 @@ export default function MainScreen()
     }
 
     return(
-        <main className="flex min-h-screen flex-col items-start justify-normal p-24">
+        <main className="flex relative space-y-12 flex-col items-start justify-normal p-24" style={{height:"calc(100vh - 4rem)"}}>
             <div className="flex items-center space-x-2 justify-center w-full">
                 <SearchBar submit={submitHandler} ref={searchRef}/>
                 <LocationButton ubi={() => AskUbication(updateWeather)}></LocationButton>
             </div>
-            <div className="grid space-y-4">
+            <div className="md:space-y-4 flex justify-between w-full">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
-            </div>
-            <div className="absolute w-3/5 left-96 grid space-y-12 top-1/4">
-                <Forecast city={mainCity} day={day1}></Forecast>
-                <Forecast city={mainCity} day={day2}></Forecast>
-                <Forecast city={mainCity} day={day3}></Forecast>
-                <Forecast city={mainCity} day={day4}></Forecast>
-                <Forecast city={mainCity} day={day5}></Forecast>
+                <section className="md:w-5/6 grid space-y-12">
+                    <Forecast city={mainCity} day={day1}></Forecast>
+                    <Forecast city={mainCity} day={day2}></Forecast>
+                    <Forecast city={mainCity} day={day3}></Forecast>
+                    <Forecast city={mainCity} day={day4}></Forecast>
+                    <Forecast city={mainCity} day={day5}></Forecast>
+                </section>
             </div>
         </main>
 
