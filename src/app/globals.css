@@ -54,3 +54,10 @@ body {
     top: 100%;
   }
 }
+
+@media screen and (max-width: 640px) {
+  #section
+  {
+    margin-top: 1rem;
+  }
+}
