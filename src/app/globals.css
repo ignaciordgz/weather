@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  height: 100%;
 }
 
 @layer utilities {
@@ -44,14 +45,6 @@ body {
   #section
   {
     width: auto;
-  }
-}
-
-@media screen and (max-width: 825px) {
-  #footerdiv
-  {
-    position: absolute;
-    top: 100%;
   }
 }
 
