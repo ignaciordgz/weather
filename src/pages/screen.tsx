@@ -61,6 +61,8 @@ export default function MainScreen()
     const [ day4, setDay4 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
     const [ day5, setDay5 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
 
+    const [ see, setSee] = useState<undefined>()
+
     const updateWeather = async(city:string) =>
     {
         try
