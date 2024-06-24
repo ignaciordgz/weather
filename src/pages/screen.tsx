@@ -61,7 +61,7 @@ export default function MainScreen()
     const [ day4, setDay4 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
     const [ day5, setDay5 ] = useState<weatherDay | undefined>({temp : "0", humidity: "0", wind: "0", main: "Clear", time:""})
 
-    const [ see, setSee] = useState<undefined>()
+    const [ see, setSee ] = useState<undefined>()
 
     const updateWeather = async(city:string) =>
     {
@@ -116,7 +116,7 @@ export default function MainScreen()
             </div>
             <div id="forecastdiv" className="sm:space-y-4 flex justify-between w-full">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
-                <section id="section" className="md:w-5/6 grid space-y-12">
+                <section id="section" className="sm:w-0 md:w-5/6 grid space-y-12">
                     <Forecast city={mainCity} day={day1}></Forecast>
                     <Forecast city={mainCity} day={day2}></Forecast>
                     <Forecast city={mainCity} day={day3}></Forecast>
