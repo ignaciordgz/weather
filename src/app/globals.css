@@ -45,6 +45,7 @@ body {
   #section
   {
     width: auto;
+    visibility: hidden;
   }
 }
 
