@@ -45,7 +45,6 @@ body {
   #section
   {
     width: auto;
-    visibility: hidden;
   }
 }
 
@@ -55,3 +54,59 @@ body {
     margin-top: 1rem;
   }
 }
+
+@media screen and (max-width: 525px) {
+  #forecastItems
+  {
+    width: 12rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #windText
+  {
+    font-size: 0.75rem;
+    line-height: 1rem
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #humText
+  {
+    font-size: 0.75rem;
+    line-height: 1rem
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #tempText
+  {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding-left: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #img
+  {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #img
+  {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #humDiv
+  {
+    padding-left: 0.35rem;
+  }
+}
+

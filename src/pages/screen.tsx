@@ -65,6 +65,8 @@ export default function MainScreen()
 
     const updateWeather = async(city:string) =>
     {
+        setSee(true)
+
         try
         {
             let response = await axiosGetCityInfo(city)
@@ -116,7 +118,7 @@ export default function MainScreen()
             </div>
             <div id="forecastdiv" className="sm:space-y-4 flex justify-between w-full">
                 <WeatherLogo description={mainWeather} temp={temp} humidity={humidity} wind={wind}/>
-                <section id="section" className={see ? "md:w-5/6 grid space-y-12" : "max-sm:invisible md:visible md:w-5/6 grid space-y-12"}>
+                <section id="section" className={see ? "md:w-5/6 grid space-y-12" : "invisible"}>
                     <Forecast city={mainCity} day={day1}></Forecast>
                     <Forecast city={mainCity} day={day2}></Forecast>
                     <Forecast city={mainCity} day={day3}></Forecast>
