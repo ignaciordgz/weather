@@ -3,6 +3,9 @@
 - Weather App made with [Next.js](https://nextjs.org/)
 - Consumes API from [OpenWeather](https://openweathermap.org/api)
 
+## ☁️ Web App
+[weather-lake-rho.vercel.app](https://weather-lake-rho.vercel.app/)
+
 ## Requirements ✔️
 - [Node.js](https://nodejs.org/en) 
 
