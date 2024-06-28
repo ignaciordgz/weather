@@ -26,4 +26,6 @@ export const SearchBar = forwardRef<HTMLInputElement,SearchBarProps>(({submit}:a
     )
 })
 
+SearchBar.displayName = 'SearchBar';
+
 export default SearchBar
