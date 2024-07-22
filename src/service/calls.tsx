@@ -30,7 +30,7 @@ export const axiosGetCityFromUbi = async ( lat:string, long:string) =>
 {
     try
     {
-        return await axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+        return await axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
     }
     catch(error)
     {
