@@ -1,5 +1,4 @@
 "use client"
-import Footer from "@/components/footer"
 import Forecast from "@/components/forecast"
 import LocationButton from "@/components/location"
 import SearchBar from "@/components/searchbar"
